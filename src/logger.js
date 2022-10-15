@@ -39,7 +39,7 @@ const requestLogger = (options = {}) => asyncErrorHandler(async (req, res, next)
       url: req.path,
       method: req.method,
       body: actualLogRequestBody ? JSON.stringify(req.body) : null,
-      requestBodySize: JSON.stringify(req.body).length,
+      requestBodySize: !req.body ? 0 : JSON.stringify(req.body).length,
       headers: JSON.stringify(req.headers),
       params: JSON.stringify(req.params),
       query: JSON.stringify(req.query),

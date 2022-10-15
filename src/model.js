@@ -12,6 +12,8 @@ module.exports = ({ tableName, isUuidPk = false }) => (sequelize, DataTypes) => 
     time: DataTypes.FLOAT,
     requestBodySize: DataTypes.BIGINT,
     responseBodySize: DataTypes.BIGINT,
+    userId: DataTypes.BIGINT,
+    searchText: DataTypes.TEXT,
   },
   {
     underscored: true,
